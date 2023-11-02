@@ -1,0 +1,12 @@
+@import '../../stylesVariables/variables.scss';
+
+
+
+.global-header-container{
+    h1{
+        text-align: $center;
+        color: $yellowColor;
+        font-size: 35px;
+        cursor: $cursor;
+    }
+}

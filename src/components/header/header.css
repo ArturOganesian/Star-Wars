@@ -1,0 +1,6 @@
+.global-header-container h1 {
+  text-align: center;
+  color: rgb(217, 217, 73);
+  font-size: 35px;
+  cursor: pointer;
+}
