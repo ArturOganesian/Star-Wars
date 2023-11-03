@@ -1,6 +1,23 @@
+.global-header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 25px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 .global-header-container h1 {
   text-align: center;
   color: rgb(217, 217, 73);
   font-size: 35px;
   cursor: pointer;
+}
+
+.nav-header-link {
+  color: rgb(217, 217, 73);
+  text-decoration: none;
+  font-size: 20px;
 }

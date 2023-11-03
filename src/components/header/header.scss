@@ -1,12 +1,20 @@
-@import '../../stylesVariables/variables.scss';
+@import "../../stylesVariables/variables.scss";
 
+.global-header-container {
+  display: $display;
+  padding-bottom: 25px;
+  justify-content: space-around;
+  align-items: center;
+  h1 {
+    text-align: $center;
+    color: $yellowColor;
+    font-size: 35px;
+    cursor: $cursor;
+  }
+}
 
-
-.global-header-container{
-    h1{
-        text-align: $center;
-        color: $yellowColor;
-        font-size: 35px;
-        cursor: $cursor;
-    }
+.nav-header-link{
+  color: $yellowColor;
+ text-decoration: none;
+ font-size: $fontSize;
 }
