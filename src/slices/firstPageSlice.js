@@ -18,7 +18,7 @@ export const getPersons = createAsyncThunk(
 
       return [response.data];
     } catch (err) {
-      console.error(err.message, "Oops");
+      console.log(err.message, "Oops");
       return rejectWithValue(err.message);
     }
   },
