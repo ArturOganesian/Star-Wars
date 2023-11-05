@@ -5,7 +5,7 @@
             transform: scale(1);
   }
   50% {
-    color: blue;
+    color: aquamarine;
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
   }
@@ -22,7 +22,7 @@
             transform: scale(1);
   }
   50% {
-    color: blue;
+    color: aquamarine;
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
   }
@@ -32,6 +32,31 @@
             transform: scale(1);
   }
 }
+.global-planets-div h1 {
+  text-align: center;
+  color: aqua;
+  -webkit-animation: titleAnimation 3s infinite;
+          animation: titleAnimation 3s infinite;
+  width: 95%;
+}
+
+.navigation-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+.navigation-links a {
+  color: red;
+  padding: 15px;
+  cursor: pointer;
+  background-color: rgb(217, 217, 73);
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
 .planets {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -49,6 +74,8 @@
       -ms-flex-pack: center;
           justify-content: center;
   background-color: rgb(217, 217, 73);
+  padding: 50px;
+  border-radius: 15px;
 }
 .planets img {
   width: 220px;

@@ -1,0 +1,64 @@
+@import "../../stylesVariables/variables.scss";
+
+.characters-1 {
+  margin-top: 50px;
+  border-radius: 5px;
+  img {
+    width: $personImgWidth;
+    height: $personImgHeight;
+    border-radius: 15px;
+    padding-top: 15px;
+  }
+}
+.character {
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.first-part-global-container {
+  display: $display;
+  width: 90%;
+  flex-wrap: wrap;
+  justify-content: $center;
+  margin-left: 69px;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: $yellowColor;
+
+  span {
+    display: $display;
+    align-items: $center;
+    justify-content: $center;
+    background-color: #fff;
+    width: 220px;
+    height: 50px;
+    border-radius: 10px;
+  }
+}
+
+.persons-info-container {
+  text-align: $center;
+}
+.persons-global-container {
+  h1{
+   text-align: center;
+   width: 90%;
+   margin-left: 50px;
+ 
+   animation: titleAnimation 3s infinite;
+  }
+  .navigation-links {
+    display: $display;
+    justify-content: end;
+  
+    a {
+      color: red;
+      padding: 15px;
+      cursor: $cursor;
+      background-color: yellow;
+      border: 1px solid black;
+      border-radius: 15px;
+    }
+  }
+}
+

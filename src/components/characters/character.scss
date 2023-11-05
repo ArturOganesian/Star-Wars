@@ -1,0 +1,32 @@
+@import '../../stylesVariables/variables.scss';
+
+
+.character-info-container{
+    img{
+        width: $personImgWidth;
+        height: $personImgHeight;
+        border-radius: 10rem;
+    }
+}
+
+.character-info-global{
+    display: $display;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.character-info{
+    
+  h3{
+   
+   text-align: center;
+   animation: titleAnimation 3s infinite;
+   
+  }
+  p{
+    color: $yellowColor;
+  }
+   span{
+    padding: 15px;
+    color: aqua;
+   }
+}

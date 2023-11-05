@@ -4,17 +4,17 @@
   display: $display;
   padding-bottom: 25px;
   justify-content: space-around;
-  align-items: center;
-  h1 {
+  .logo-name {
     text-align: $center;
     color: $yellowColor;
     font-size: 35px;
     cursor: $cursor;
+    text-decoration: none;
   }
 }
 
-.nav-header-link{
+.nav-header-link {
   color: $yellowColor;
- text-decoration: none;
- font-size: $fontSize;
+  text-decoration: none;
+  font-size: $fontSize;
 }

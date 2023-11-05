@@ -6,18 +6,15 @@ import Planets from "./components/planets/Planets";
 import Planet from "./components/planets/Planet";
 
 function App() {
-
   return (
     <div className="App">
-       
       <Header />
       <Characters />
       <Routes>
-        <Route path="/planets" element={<Planets />} />  
+        <Route path="/planets" element={<Planets />} />
         <Route path="/planet" element={<Planet />} />
+      
       </Routes>
-     
-       
     </div>
   );
 }

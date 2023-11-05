@@ -1,0 +1,108 @@
+@-webkit-keyframes titleAnimation {
+  0% {
+    color: white;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    color: aquamarine;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    color: white;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes titleAnimation {
+  0% {
+    color: white;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    color: aquamarine;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    color: white;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+.characters-1 {
+  margin-top: 50px;
+  border-radius: 5px;
+}
+.characters-1 img {
+  width: 220px;
+  height: 270px;
+  border-radius: 15px;
+  padding-top: 15px;
+}
+
+.character {
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.first-part-global-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 69px;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: rgb(217, 217, 73);
+}
+.first-part-global-container span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #fff;
+  width: 220px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.persons-info-container {
+  text-align: center;
+}
+
+.persons-global-container h1 {
+  text-align: center;
+  width: 90%;
+  margin-left: 50px;
+  -webkit-animation: titleAnimation 3s infinite;
+          animation: titleAnimation 3s infinite;
+}
+.persons-global-container .navigation-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+.persons-global-container .navigation-links a {
+  color: red;
+  padding: 15px;
+  cursor: pointer;
+  background-color: yellow;
+  border: 1px solid black;
+  border-radius: 15px;
+}

@@ -32,24 +32,32 @@
             transform: scale(1);
   }
 }
-.global-header-container {
+.character-info-container img {
+  width: 220px;
+  height: 270px;
+  border-radius: 10rem;
+}
+
+.character-info-global {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-bottom: 25px;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-}
-.global-header-container .logo-name {
-  text-align: center;
-  color: rgb(217, 217, 73);
-  font-size: 35px;
-  cursor: pointer;
-  text-decoration: none;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
-.nav-header-link {
+.character-info h3 {
+  text-align: center;
+  -webkit-animation: titleAnimation 3s infinite;
+          animation: titleAnimation 3s infinite;
+}
+.character-info p {
   color: rgb(217, 217, 73);
-  text-decoration: none;
-  font-size: 20px;
+}
+.character-info span {
+  padding: 15px;
+  color: aqua;
 }

@@ -1,100 +1,99 @@
-@import '../../stylesVariables/variables.scss';
+@import "../../stylesVariables/variables.scss";
 
-@keyframes titleAnimation {
-    0% {
-      color: white;
-      transform: scale(1);
-    }
-    50% {
-      color: blue;
-      transform: scale(1.1);
-    }
-    100% {
-      color: white;
-      transform: scale(1);
-    }
+.global-planets-div{
+  h1{
+    text-align: center;
+    color: aqua;
+    animation: titleAnimation 3s infinite;
+    width: 95%;
   }
-.planets{
-    display: $display;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: $center;
-    justify-content: $center;
+}
+.navigation-links {
+  display: $display;
+  justify-content: end;
+  a {
+    color: red;
+    padding: $fifthenPix;
+    cursor: $cursor;
     background-color: $yellowColor;
+    border: 1px solid black;
+    border-radius: $fifthenPix;
+  }
+}
+.planets {
+  display: $display;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: $center;
+  justify-content: $center;
+  background-color: $yellowColor;
+  padding: 50px;
+  border-radius: 15px;
 
-    img{
-        width: $personImgWidth;
-        height: $personImgHeight;
-        border-radius: 10px;
-    }
-    .planet{
-        padding: 20px;
-    }
+  img {
+    width: $personImgWidth;
+    height: $personImgHeight;
+    border-radius: 10px;
+  }
+  .planet {
+    padding: 20px;
+  }
 }
 
-.hover-info{
-   
- 
+.hover-info {
+  display: $display;
+  flex-direction: column;
+
+  top: 370px;
+  width: $personImgWidth;
+  height: $personImgHeight / 2;
+  align-items: $center;
+
+  span {
+    padding: 8px;
+  }
+}
+
+.planet-name-hover {
+  color: blue;
+}
+.planet-name {
+  background-color: #fff;
+  position: absolute;
+  width: $personImgWidth;
+  height: 50px;
+  text-align: $center;
+  border-radius: 10px;
+}
+
+.planet-more-info-container {
+  span {
+    color: $yellowColor;
+    padding: 10px;
+  }
+
+  img {
+    width: $personImgWidth;
+    height: $personImgHeight;
+  }
+
+  .planet-info-container {
+    display: $display;
+    justify-content: space-evenly;
+  }
+
+  .planet-info {
     display: $display;
     flex-direction: column;
-   
-    top: 370px;
-    width: $personImgWidth;
-    height: $personImgHeight / 2;
-    align-items: $center;
-
-    span{
-        padding: 8px;
-    }
-   
-}
-
-.planet-name-hover{
+    padding: 10px;
+    justify-content: $center;
+  }
+  h3 {
     color: blue;
-   
-}
-.planet-name{
-    background-color: #fff;
-    position: absolute;
-    width: $personImgWidth;
-    height: 50px;
+    animation: titleAnimation 3s infinite;
     text-align: $center;
-    border-radius: 10px;
-}
-
-.planet-more-info-container{
-    span{
-        color: $yellowColor;
-        padding: 10px;
-    }
-
-    img{
-        width: $personImgWidth;
-        height: $personImgHeight;
-    }
-
-
-    .planet-info-container{
-        
-        display: $display;
-       justify-content: space-evenly;
-    }
-
-    .planet-info{
-        display: $display;
-        flex-direction: column;
-        padding: 10px;
-        justify-content: center;
-        
-    }
-    h3{
-        color: blue;
-        animation: titleAnimation 3s infinite;
-        text-align: $center;
-        
-    }
-    p{
-        color: aquamarine;
-        
-    }
+  }
+  p {
+    color: aquamarine;
+  }
 }
