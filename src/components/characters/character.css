@@ -32,6 +32,11 @@
             transform: scale(1);
   }
 }
+.test-abso {
+  position: absolute;
+  left: 50px;
+}
+
 .character-info-container img {
   width: 220px;
   height: 270px;

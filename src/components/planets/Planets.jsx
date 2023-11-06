@@ -1,67 +1,73 @@
 import "./planet.css";
 import { getPlanets } from "../../slices/planetsSlice";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import uniqid from "uniqid";
-import { Link} from "react-router-dom";
-
-
+import { Link } from "react-router-dom";
+import { Button } from "antd";
+import { LeftOutlined,RightOutlined } from "@ant-design/icons";
 
 const Planets = () => {
   const [currentImg, setCurrentImg] = useState(1);
   const dispatch = useDispatch();
   const planets = useSelector((state) => state?.planets?.planets);
   const currentPage = useSelector((state) => state?.planets?.currentPage);
+  const [currentPageState, setCurrentPageState] = useState(currentPage);
+  const [prevPageState, setPrevPageState] = useState();
 
+  // useEffect(() => {
+  //   setCurrentPageState(currentPageState + 1)
+  //   dispatch(getPlanets(currentPage));
+  // }, [window]);
 
-  const showFirstPage = () => {
-    dispatch(getPlanets(currentPage + 1));
-    setCurrentImg(1);
+  console.log(currentPageState, "current")
+  console.log(prevPageState,"prev")
+
+  const test = async () => {
+    setCurrentPageState(currentPageState + 1)
+    
+    await Promise.resolve(dispatch(getPlanets(currentPageState)));
+  }
+
+  const getNextPage = async () => {
+    setCurrentPageState(currentPageState + 1);
+    setPrevPageState(currentPageState - 1)
+    setCurrentImg(currentImg + 10);
+    
+      await Promise.resolve(dispatch(getPlanets(currentPageState)));
+    
+    
   };
-  const showSecondPage = () => {
-    dispatch(getPlanets(currentPage + 1));
-    setCurrentImg(11);
+
+  const getPrevPage = async () => {
+    setPrevPageState(prevPageState)
+    setCurrentPageState(prevPageState + 1)
+    if (currentImg >= 10) {
+      setCurrentImg(currentImg - 10);
+    }
+    await Promise.resolve(dispatch(getPlanets(prevPageState)));
   };
-  const showThirthPage = () => {
-    dispatch(getPlanets(currentPage + 2));
-    setCurrentImg(22);
-  };
-  const showFourthPage = () => {
-    dispatch(getPlanets(currentPage + 3));
-    setCurrentImg(32);
-  };
-  const showFifthPage = () => {
-    dispatch(getPlanets(currentPage + 4));
-    setCurrentImg(42);
-  };
-  const showSixthPage = () => {
-    dispatch(getPlanets(currentPage + 5));
-    setCurrentImg(52);
-  };
-  
+
 
   console.log(planets);
   return (
     <section className="global-planets-div">
       <div className="navigation-links">
-      <a onClick={showFirstPage}>1</a>
-      <a onClick={showSecondPage}>2</a>
-      <a onClick={showThirthPage}>3</a>
-      <a onClick={showFourthPage}>4</a>
-      <a onClick={showFifthPage}>5</a>
-      <a onClick={showSixthPage}>6</a>
+      <Button onClick={getPrevPage}><LeftOutlined /></Button>
+        <Button onClick={getNextPage}><RightOutlined /></Button>
+        <a className="test-abso" onClick={test}>test</a>
       </div>
-    
-       <h1>Planets</h1>
+
+      <h1>Planets</h1>
 
       <div className="planets">
         {planets[planets.length - 1]?.results.map((planet, index) => (
           <div className="planet" key={uniqid()}>
             <span className="planet-name">{planet.name}</span>
             <img
-              src={`https://starwars-visualguide.com/assets/img/planets/${
-                currentImg <= 60 ? index + currentImg : index
-              }.jpg`}
+              src={currentImg >= 1  && currentImg < 20? `https://starwars-visualguide.com/assets/img/planets/${
+                currentImg  + index  
+              }.jpg` : "https://starwars-visualguide.com/assets/img/placeholder.jpg"}
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src =
@@ -81,7 +87,7 @@ const Planets = () => {
               <Link
                 to={{
                   pathname: "/planet",
-                  search: `?sort=${planet.name}`
+                  search: `?sort=${planet.name}`,
                 }}
                 state={{
                   name: planet.name,
@@ -104,7 +110,6 @@ const Planets = () => {
           </div>
         ))}
       </div>
-
     </section>
   );
 };

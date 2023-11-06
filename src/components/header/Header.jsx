@@ -4,7 +4,9 @@ import "./header.css";
 const Header = () => {
   return (
     <section className="global-header-container">
-      <a className="logo-name" href="/">Star Wars</a>
+      <a className="logo-name" href="/">
+        Star Wars
+      </a>
       <Link to={{ pathname: "/characters" }} className="nav-header-link">
         Characters
       </Link>

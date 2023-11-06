@@ -13,7 +13,6 @@ function App() {
       <Routes>
         <Route path="/planets" element={<Planets />} />
         <Route path="/planet" element={<Planet />} />
-      
       </Routes>
     </div>
   );

@@ -40,17 +40,17 @@
   text-align: $center;
 }
 .persons-global-container {
-  h1{
-   text-align: center;
-   width: 90%;
-   margin-left: 50px;
- 
-   animation: titleAnimation 3s infinite;
+  h1 {
+    text-align: center;
+    width: 90%;
+    margin-left: 50px;
+
+    animation: titleAnimation 3s infinite;
   }
   .navigation-links {
     display: $display;
     justify-content: end;
-  
+
     a {
       color: red;
       padding: 15px;
@@ -61,4 +61,3 @@
     }
   }
 }
-

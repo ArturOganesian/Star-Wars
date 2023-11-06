@@ -8,16 +8,22 @@ $fontSize: 20px;
 $positon: absolute;
 $fifthenPix: 15px;
 @keyframes titleAnimation {
-    0% {
-      color: white;
-      transform: scale(1);
-    }
-    50% {
-      color: aquamarine;
-      transform: scale(1.1);
-    }
-    100% {
-      color: white;
-      transform: scale(1);
-    }
+  0% {
+    color: white;
+    transform: scale(1);
   }
+  50% {
+    color: aquamarine;
+    transform: scale(1.1);
+  }
+  100% {
+    color: white;
+    transform: scale(1);
+  }
+}
+
+//_________
+.test-abso{
+  position: absolute;
+  left: 50px;
+}

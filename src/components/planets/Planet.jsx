@@ -6,11 +6,14 @@ const Planet = () => {
   return (
     <section className="planet-more-info-container">
       <div className="planet-info-container">
-        <img src={state?.imgSrc} onError={(e) => {
-                e.target.onerror = null;
-                e.target.src =
-                  "https://starwars-visualguide.com/assets/img/placeholder.jpg";
-              }}/>
+        <img
+          src={state?.imgSrc}
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src =
+              "https://starwars-visualguide.com/assets/img/placeholder.jpg";
+          }}
+        />
         <div className="planet-info">
           <h3>{state?.name}</h3>
           <p>
@@ -39,7 +42,6 @@ const Planet = () => {
           </p>
         </div>
       </div>
-      
     </section>
   );
 };

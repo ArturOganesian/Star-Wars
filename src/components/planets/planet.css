@@ -32,6 +32,11 @@
             transform: scale(1);
   }
 }
+.test-abso {
+  position: absolute;
+  left: 50px;
+}
+
 .global-planets-div h1 {
   text-align: center;
   color: aqua;
@@ -155,4 +160,15 @@
 }
 .planet-more-info-container p {
   color: aquamarine;
+}
+
+.navigation-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-right: 25px;
+}
+.navigation-links Button {
+  color: red;
+  background-color: blue;
 }

@@ -32,6 +32,11 @@
             transform: scale(1);
   }
 }
+.test-abso {
+  position: absolute;
+  left: 50px;
+}
+
 .global-header-container {
   display: -webkit-box;
   display: -ms-flexbox;

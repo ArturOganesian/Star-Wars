@@ -1,7 +1,12 @@
 @import "../../stylesVariables/variables.scss";
 
-.global-planets-div{
-  h1{
+@mixin navLinks($color,$bgColor){
+  color: $color;
+  background-color: $bgColor;
+ 
+}
+.global-planets-div {
+  h1 {
     text-align: center;
     color: aqua;
     animation: titleAnimation 3s infinite;
@@ -95,5 +100,15 @@
   }
   p {
     color: aquamarine;
+  }
+}
+
+.navigation-links{
+  display: $display;
+  
+  padding-right: 25px;
+  Button{
+    
+    @include navLinks(red,blue,)
   }
 }

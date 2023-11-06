@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import FirstPart from "./FirstPart";
 import Character from "./Character";
 
-
 const Characters = () => {
   return (
     <div className="global-characters-div">
