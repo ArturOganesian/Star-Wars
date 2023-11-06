@@ -5,6 +5,7 @@ import { getPersons, setCurrentPage } from "../../slices/firstPageSlice";
 import "./characters.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { LeftOutlined,RightOutlined } from "@ant-design/icons";
 
 import uniqid from "uniqid";
 
@@ -14,33 +15,44 @@ const FirstPart = () => {
   const persons = useSelector((state) => state?.persons?.persons);
   let currentPage = useSelector((state) => state?.persons?.currentPage);
   const loading = useSelector((state) => state.persons.isLoading);
-  let [testState, setTestState] = useState(currentPage);
-  let arr = persons;
+  const [currentPageState, setCurrentPageState] = useState(currentPage);
+  const [prevPageState,setPrevPageState] = useState()
 
+ 
+  console.log(persons)
+  
   const testFunc = async () => {
-    setTestState(testState + 1);
-    setCurrentImg(currentImg + 11);
-    await Promise.resolve(dispatch(getPersons(testState)));
+    setCurrentPageState(currentPageState + 1);
+    await Promise.resolve(dispatch(getPersons(currentPageState)))
+  }
+  const nextPage= async () => {
+    setCurrentPageState(currentPageState + 1);
+    setPrevPageState(currentPageState - 1)
+    setCurrentImg(currentImg + 10);
+    if (currentImg > 11) {
+      setCurrentImg(currentImg + 11)
+    }
+    await Promise.resolve(dispatch(getPersons(currentPageState)));
   };
 
-  useEffect(() => {
-    setTestState(testState + 1);
-    dispatch(getPersons(testState));
-  }, [window]);
+  const prevPage = async () => {
+    setPrevPageState(prevPageState -1)
+    setCurrentPageState(prevPageState + 1)
+    if (currentImg > 10) {
+      setCurrentImg(currentImg - 10);
+    }
 
-  const prevFunc = async () => {
-    setTestState(testState - 1);
 
-    await Promise.resolve(dispatch(getPersons(testState)));
+    await Promise.resolve(dispatch(getPersons(prevPageState)));
   };
 
   return (
     <section className="persons-global-container">
       <div className="navigation-links">
-        {testState <= 9 ? <button onClick={testFunc}>next</button> : null}
-
-        <div>gg</div>
-        <button onClick={prevFunc}>prev</button>
+        <a onClick={testFunc} style={{backgroundColor: "white", position: "absolute",left: "500px"}}>Click me</a>
+      <Button onClick={prevPage}><LeftOutlined /></Button>
+        {currentPageState <= 9 ? <Button onClick={nextPage}><RightOutlined /></Button> : null}
+        
       </div>
       <h1>Characters</h1>
 

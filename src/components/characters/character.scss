@@ -15,8 +15,9 @@
 }
 .character-info {
   h3 {
-    text-align: center;
+    text-align: $center;
     animation: titleAnimation 3s infinite;
+   
   }
   p {
     color: $yellowColor;

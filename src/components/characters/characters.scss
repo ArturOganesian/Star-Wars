@@ -21,9 +21,9 @@
   flex-wrap: wrap;
   justify-content: $center;
   margin-left: 69px;
-  padding: 15px;
-  border-radius: 15px;
-  background-color: $yellowColor;
+  padding: $fifthenPix;
+  border-radius: $fifthenPix;
+  
 
   span {
     display: $display;
@@ -38,12 +38,17 @@
 
 .persons-info-container {
   text-align: $center;
+  background-color: #fff;
+ margin-left: 10px;
+  padding: $fifthenPix;
+  border-radius: 10px;
+  width: 200px;
 }
 .persons-global-container {
   h1 {
-    text-align: center;
+    text-align: $center;
     width: 90%;
-    margin-left: 50px;
+    margin-left: 80px;
 
     animation: titleAnimation 3s infinite;
   }

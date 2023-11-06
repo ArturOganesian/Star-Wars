@@ -15,17 +15,13 @@ const Planets = () => {
   const [currentPageState, setCurrentPageState] = useState(currentPage);
   const [prevPageState, setPrevPageState] = useState();
 
-  // useEffect(() => {
-  //   setCurrentPageState(currentPageState + 1)
-  //   dispatch(getPlanets(currentPage));
-  // }, [window]);
+
 
   console.log(currentPageState, "current")
   console.log(prevPageState,"prev")
 
   const test = async () => {
     setCurrentPageState(currentPageState + 1)
-    
     await Promise.resolve(dispatch(getPlanets(currentPageState)));
   }
 

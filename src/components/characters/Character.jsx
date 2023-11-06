@@ -2,11 +2,13 @@ import { useLocation } from "react-router-dom";
 import "./character.css";
 import { Link } from "react-router-dom";
 
+
 const Character = () => {
   const location = useLocation();
   const state = location.state;
   return (
     <section className="character-info-container">
+      
       <div className="character-info-global">
         <img src={state?.imgUrl} alt="person Image" />
         <div className="character-info">
@@ -15,6 +17,7 @@ const Character = () => {
             <span>Birth Year</span>
             {state?.birth_year}
           </p>
+
           <p>
             <span>Height</span>
             {state?.height}cm
@@ -35,7 +38,9 @@ const Character = () => {
             <span>Home World</span>
             <Link
               to={{
-                pathname: `/planets`,
+                pathname: `/planet`,
+                 search: `?sort=Hoth`,
+              
               }}
             >
               Link
