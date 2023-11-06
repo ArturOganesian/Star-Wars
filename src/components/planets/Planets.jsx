@@ -13,8 +13,9 @@ const Planets = () => {
   const planets = useSelector((state) => state?.planets?.planets);
   const currentPage = useSelector((state) => state?.planets?.currentPage);
 
+
   const showFirstPage = () => {
-    dispatch(getPlanets(currentPage));
+    dispatch(getPlanets(currentPage + 1));
     setCurrentImg(1);
   };
   const showSecondPage = () => {

@@ -1,83 +1,78 @@
 import { LoadingOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import { getPersons } from "../../slices/firstPageSlice";
+import { Button } from "antd";
+import { getPersons, setCurrentPage } from "../../slices/firstPageSlice";
 import "./characters.css";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import uniqid from "uniqid";
 
 const FirstPart = () => {
-  const [currentImg, setCurrentImg] = useState(1);
 
+  const [currentImg, setCurrentImg] = useState(1);
   const dispatch = useDispatch();
   const persons = useSelector((state) => state?.persons?.persons);
   let currentPage = useSelector((state) => state?.persons?.currentPage);
   const loading = useSelector((state) => state.persons.isLoading);
+let [testState,setTestState] = useState(currentPage)
+   let arr = persons
+  
+  const testFunc = async() => {
+    setTestState(testState + 1)
+    setCurrentImg(currentImg + 11)
+    await Promise.resolve(dispatch(getPersons(testState)))
+    
+  
+  }
 
-  console.log(persons);
-  const showFirstPage = () => {
-    dispatch(getPersons(currentPage));
-    setCurrentImg(1);
-  };
-  const showSecondPage = () => {
-    dispatch(getPersons(currentPage + 1));
-    setCurrentImg(11);
-  };
-  const showThirdPage = () => {
-    dispatch(getPersons(currentPage + 2));
-    setCurrentImg(22);
-  };
-  const showFourthPage = () => {
-    dispatch(getPersons(currentPage + 3));
-    setCurrentImg(32);
-  };
-  const showFifthPage = () => {
-    dispatch(getPersons(currentPage + 4));
-    setCurrentImg(42);
-  };
-  const showSixthPage = () => {
-    dispatch(getPersons(currentPage + 5));
-    setCurrentImg(52);
-  };
-  const showSeventhPage = () => {
-    dispatch(getPersons(currentPage + 6));
-    setCurrentImg(62);
-  };
-  const showeEighthPage = () => {
-    dispatch(getPersons(currentPage + 7));
-    setCurrentImg(72);
-  };
-  const showeNinethPage = () => {
-    dispatch(getPersons(currentPage + 8));
-    setCurrentImg(82);
-  };
+  
+  useEffect(() => {
+  setTestState(testState + 1)
+ dispatch(getPersons(testState))
+},[window] );
+  
+  const prevFunc = async () => {
+    setTestState(testState - 1)
 
+     await Promise.resolve(dispatch(getPersons(testState)))
+    
+  }
+  
+  
+  
   return (
     <section className="persons-global-container">
       <div className="navigation-links">
-        <a onClick={showFirstPage}>1</a>
-        <a onClick={showSecondPage}>2</a>
-        <a onClick={showThirdPage}>3</a>
-        <a onClick={showFourthPage}>4</a>
-        <a onClick={showFifthPage}>5</a>
-        <a onClick={showSixthPage}>6</a>
-        <a onClick={showSeventhPage}>7</a>
-        <a onClick={showeEighthPage}>8</a>
-        <a onClick={showeNinethPage}>9</a>
+        {testState <= 9 ? <button onClick={testFunc}>next</button> : null}
+        
+        <div>
+          gg
+        </div>
+        <button onClick={prevFunc}>prev</button>
+
+  
       </div>
        <h1>Characters</h1>
 
-      {loading ? (
+    
         <section className="first-part-global-container">
-          {persons[persons.length - 1]?.results.map((person, index) => (
+          {persons[persons.length-1]?.results.map((person, index) => (
             <div key={uniqid()} className="characters-1">
               <div className="character">
                 <span>{person.name}</span>
                 <img
-                  src={`https://starwars-visualguide.com/assets/img/characters/${
-                    currentImg <= 89 ? index + currentImg : index
-                  }.jpg`}
+                  src={
+                     currentImg + index !== 17 ? `https://starwars-visualguide.com/assets/img/characters/${
+                   
+                    currentImg + index
+                    }.jpg` : "https://starwars-visualguide.com/assets/img/placeholder.jpg"}
+                  alt={"errror"}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src =
+                        "https://starwars-visualguide.com/assets/img/placeholder.jpg";
+                    }}
                 />
               </div>
               <div className="persons-info-container">
@@ -88,7 +83,10 @@ const FirstPart = () => {
                 </p>
                 <p className="person-info">mass: {person.mass}kg</p>
                 <Link
-                  to="/character"
+                  to={{
+                    pathname: '/character',
+                    search: `?sort=${person.name}`
+                  }}
                   state={{
                     name: person.name,
                     birth_year: person.birth_year,
@@ -100,12 +98,10 @@ const FirstPart = () => {
                     skin_color: person.skin_color,
                     homeworld: person.homeworld,
                     imgUrl: `https://starwars-visualguide.com/assets/img/characters/${
-                      currentImg <= 89 ? index + currentImg : index
+                      currentImg <= 89 ? index + currentImg  : index
                     }.jpg`,
 
-                    imgSrc: `https://starwars-visualguide.com/assets/img/planets/${
-                      currentImg <= 60 ? index + currentImg : index
-                    }.jpg`,
+                 
                   }}
                 >
                   More Info
@@ -114,11 +110,7 @@ const FirstPart = () => {
             </div>
           ))}
         </section>
-      ) : (
-        <h1 style={{ color: "yellow", fontSize: "300px", textAlign: "center" }}>
-          <LoadingOutlined />
-        </h1>
-      )}
+     
     </section>
   );
 };
