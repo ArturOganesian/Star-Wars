@@ -14,7 +14,7 @@ $fifthenPix: 15px;
   }
   50% {
     color: aquamarine;
-    transform: scale(1.1);
+    transform: solid(1.1);
   }
   100% {
     color: white;
@@ -23,7 +23,7 @@ $fifthenPix: 15px;
 }
 
 //_________
-.test-abso{
+.test-abso {
   position: absolute;
   left: 50px;
 }

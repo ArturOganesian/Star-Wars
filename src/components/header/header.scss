@@ -2,12 +2,25 @@
 
 .global-header-container {
   display: $display;
-  padding-bottom: 25px;
+  padding: $fifthenPix;
   justify-content: space-around;
+  height: 100px;
+  width: 100%;
+  align-items: $center;
+  background-image: url("/public/header.jpg");
+  box-shadow: 0px 1px 1px white;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  @media screen and (max-width: 600px){
+     flex-direction: column;
+     align-items: start;
+  }
   .logo-name {
-    text-align: $center;
+    
     color: $yellowColor;
-    font-size: 35px;
+    font-family: 'Cabin Sketch', sans-serif;
+    font-size: 3rem;
     cursor: $cursor;
     text-decoration: none;
   }

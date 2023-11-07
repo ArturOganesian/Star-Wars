@@ -6,8 +6,8 @@
   }
   50% {
     color: aquamarine;
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: solid(1.1);
+            transform: solid(1.1);
   }
   100% {
     color: white;
@@ -23,8 +23,8 @@
   }
   50% {
     color: aquamarine;
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: solid(1.1);
+            transform: solid(1.1);
   }
   100% {
     color: white;
@@ -52,6 +52,8 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .character-info h3 {

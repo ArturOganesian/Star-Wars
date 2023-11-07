@@ -6,8 +6,8 @@
   }
   50% {
     color: aquamarine;
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: solid(1.1);
+            transform: solid(1.1);
   }
   100% {
     color: white;
@@ -23,8 +23,8 @@
   }
   50% {
     color: aquamarine;
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: solid(1.1);
+            transform: solid(1.1);
   }
   100% {
     color: white;
@@ -42,7 +42,6 @@
   color: aqua;
   -webkit-animation: titleAnimation 3s infinite;
           animation: titleAnimation 3s infinite;
-  width: 95%;
 }
 
 .navigation-links {
@@ -78,7 +77,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: rgb(217, 217, 73);
   padding: 50px;
   border-radius: 15px;
 }
@@ -99,6 +97,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: #fff;
+  border-radius: 15px;
   top: 370px;
   width: 220px;
   height: 135px;
@@ -115,7 +115,6 @@
 }
 
 .planet-name {
-  background-color: #fff;
   position: absolute;
   width: 220px;
   height: 50px;
@@ -153,7 +152,6 @@
           justify-content: center;
 }
 .planet-more-info-container h3 {
-  color: blue;
   -webkit-animation: titleAnimation 3s infinite;
           animation: titleAnimation 3s infinite;
   text-align: center;
@@ -168,7 +166,11 @@
   display: flex;
   padding-right: 25px;
 }
-.navigation-links Button {
-  color: red;
-  background-color: blue;
+@media screen and (max-width: 900px) {
+  .navigation-links {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 0;
+  }
 }

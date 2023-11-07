@@ -1,16 +1,12 @@
 @import "../../stylesVariables/variables.scss";
 
-@mixin navLinks($color,$bgColor){
-  color: $color;
-  background-color: $bgColor;
- 
-}
+
 .global-planets-div {
   h1 {
-    text-align: center;
+    text-align: $center;
     color: aqua;
     animation: titleAnimation 3s infinite;
-    width: 95%;
+    
   }
 }
 .navigation-links {
@@ -31,7 +27,7 @@
   flex-wrap: wrap;
   align-items: $center;
   justify-content: $center;
-  background-color: $yellowColor;
+
   padding: 50px;
   border-radius: 15px;
 
@@ -48,7 +44,8 @@
 .hover-info {
   display: $display;
   flex-direction: column;
-
+  background-color: #fff;
+  border-radius: $fifthenPix;
   top: 370px;
   width: $personImgWidth;
   height: $personImgHeight / 2;
@@ -56,6 +53,7 @@
 
   span {
     padding: 8px;
+   
   }
 }
 
@@ -63,7 +61,7 @@
   color: blue;
 }
 .planet-name {
-  background-color: #fff;
+  
   position: absolute;
   width: $personImgWidth;
   height: 50px;
@@ -94,7 +92,7 @@
     justify-content: $center;
   }
   h3 {
-    color: blue;
+  
     animation: titleAnimation 3s infinite;
     text-align: $center;
   }
@@ -103,12 +101,14 @@
   }
 }
 
-.navigation-links{
+.navigation-links {
   display: $display;
   
   padding-right: 25px;
-  Button{
-    
-    @include navLinks(red,blue,)
-  }
+ @media screen and (max-width: 900px){
+  justify-content: center;
+  padding: 0;
+
+ }
+  
 }

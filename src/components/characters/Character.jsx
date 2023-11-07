@@ -2,13 +2,12 @@ import { useLocation } from "react-router-dom";
 import "./character.css";
 import { Link } from "react-router-dom";
 
-
 const Character = () => {
   const location = useLocation();
   const state = location.state;
+  console.log(state.homeworld);
   return (
     <section className="character-info-container">
-      
       <div className="character-info-global">
         <img src={state?.imgUrl} alt="person Image" />
         <div className="character-info">
@@ -39,8 +38,7 @@ const Character = () => {
             <Link
               to={{
                 pathname: `/planet`,
-                 search: `?sort=Hoth`,
-              
+                search: `?sort=Hoth`,
               }}
             >
               Link

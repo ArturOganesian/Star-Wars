@@ -1,29 +1,38 @@
 @import "../../stylesVariables/variables.scss";
 
+
+.global-characters-div{
+    margin-top: 180px;
+   min-height: 500px;
+}
 .characters-1 {
   margin-top: 50px;
   border-radius: 5px;
   img {
     width: $personImgWidth;
     height: $personImgHeight;
-    border-radius: 15px;
-    padding-top: 15px;
+    border-radius: $fifthenPix;
+    padding-top: $fifthenPix;
   }
 }
 .character {
-  padding: 15px;
-  border-radius: 15px;
+  padding: $fifthenPix;
+  border-radius:$fifthenPix;
 }
 
 .first-part-global-container {
   display: $display;
-  width: 90%;
+  width: 91%;
   flex-wrap: wrap;
-  justify-content: $center;
-  margin-left: 69px;
+  justify-content: end;
+  @media screen and (max-width: 900px){
+    justify-content: center;
+    width: 100%;
+  }
+
+ 
   padding: $fifthenPix;
   border-radius: $fifthenPix;
-  
 
   span {
     display: $display;
@@ -39,7 +48,7 @@
 .persons-info-container {
   text-align: $center;
   background-color: #fff;
- margin-left: 10px;
+  margin-left: 10px;
   padding: $fifthenPix;
   border-radius: 10px;
   width: 200px;
@@ -47,22 +56,17 @@
 .persons-global-container {
   h1 {
     text-align: $center;
-    width: 90%;
-    margin-left: 80px;
+   
 
     animation: titleAnimation 3s infinite;
   }
-  .navigation-links {
+  .navigation-links-characters {
     display: $display;
     justify-content: end;
-
-    a {
-      color: red;
-      padding: 15px;
-      cursor: $cursor;
-      background-color: yellow;
-      border: 1px solid black;
-      border-radius: 15px;
-    }
-  }
+    align-items: center;
+    @media screen and (max-width: 900px){
+      justify-content: center;
+     
+    } 
+}
 }

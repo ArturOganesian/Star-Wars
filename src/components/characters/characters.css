@@ -6,8 +6,8 @@
   }
   50% {
     color: aquamarine;
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: solid(1.1);
+            transform: solid(1.1);
   }
   100% {
     color: white;
@@ -23,8 +23,8 @@
   }
   50% {
     color: aquamarine;
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: solid(1.1);
+            transform: solid(1.1);
   }
   100% {
     color: white;
@@ -35,6 +35,11 @@
 .test-abso {
   position: absolute;
   left: 50px;
+}
+
+.global-characters-div {
+  margin-top: 180px;
+  min-height: 500px;
 }
 
 .characters-1 {
@@ -57,15 +62,22 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 90%;
+  width: 91%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-left: 69px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
   padding: 15px;
   border-radius: 15px;
+}
+@media screen and (max-width: 900px) {
+  .first-part-global-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
 }
 .first-part-global-container span {
   display: -webkit-box;
@@ -94,24 +106,24 @@
 
 .persons-global-container h1 {
   text-align: center;
-  width: 90%;
-  margin-left: 80px;
   -webkit-animation: titleAnimation 3s infinite;
           animation: titleAnimation 3s infinite;
 }
-.persons-global-container .navigation-links {
+.persons-global-container .navigation-links-characters {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-.persons-global-container .navigation-links a {
-  color: red;
-  padding: 15px;
-  cursor: pointer;
-  background-color: yellow;
-  border: 1px solid black;
-  border-radius: 15px;
+@media screen and (max-width: 900px) {
+  .persons-global-container .navigation-links-characters {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }

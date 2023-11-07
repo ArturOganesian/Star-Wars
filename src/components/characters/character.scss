@@ -12,12 +12,12 @@
   display: $display;
   justify-content: space-around;
   align-items: flex-end;
+  flex-wrap: wrap;
 }
 .character-info {
   h3 {
     text-align: $center;
     animation: titleAnimation 3s infinite;
-   
   }
   p {
     color: $yellowColor;

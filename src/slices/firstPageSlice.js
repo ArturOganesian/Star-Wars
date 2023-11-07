@@ -39,7 +39,7 @@ export const personsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getPersons.pending, (state) => {
-        state.isLoading = true;
+        state.isLoading = false;
       })
       .addCase(getPersons.fulfilled, (state, action) => {
         state.isLoading = true;

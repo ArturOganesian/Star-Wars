@@ -38,7 +38,7 @@ export const planetsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getPlanets.pending, (state) => {
-        state.isLoading = true;
+        state.isLoading = false;
       })
       .addCase(getPlanets.fulfilled, (state, action) => {
         state.isLoading = true;

@@ -5,65 +5,70 @@ import { useDispatch, useSelector } from "react-redux";
 import uniqid from "uniqid";
 import { Link } from "react-router-dom";
 import { Button } from "antd";
-import { LeftOutlined,RightOutlined } from "@ant-design/icons";
+import { LeftOutlined, RightOutlined,LoadingOutlined } from "@ant-design/icons";
 
 const Planets = () => {
   const [currentImg, setCurrentImg] = useState(1);
   const dispatch = useDispatch();
   const planets = useSelector((state) => state?.planets?.planets);
   const currentPage = useSelector((state) => state?.planets?.currentPage);
+  const loading = useSelector((state) => state?.planets?.isLoading)
   const [currentPageState, setCurrentPageState] = useState(currentPage);
   const [prevPageState, setPrevPageState] = useState();
 
+  console.log(currentPageState, "current");
+  console.log(prevPageState, "prev");
 
-
-  console.log(currentPageState, "current")
-  console.log(prevPageState,"prev")
-
-  const test = async () => {
-    setCurrentPageState(currentPageState + 1)
-    await Promise.resolve(dispatch(getPlanets(currentPageState)));
-  }
+  useEffect(() => {
+    setCurrentPageState(currentPageState + 1);
+    dispatch(getPlanets(currentPageState));
+  }, []);
 
   const getNextPage = async () => {
     setCurrentPageState(currentPageState + 1);
-    setPrevPageState(currentPageState - 1)
+    setPrevPageState(currentPageState - 1);
     setCurrentImg(currentImg + 10);
-    
-      await Promise.resolve(dispatch(getPlanets(currentPageState)));
-    
-    
+
+    await Promise.resolve(dispatch(getPlanets(currentPageState)));
   };
 
   const getPrevPage = async () => {
-    setPrevPageState(prevPageState)
-    setCurrentPageState(prevPageState + 1)
+    setPrevPageState(prevPageState);
+    setCurrentPageState(prevPageState + 1);
     if (currentImg >= 10) {
       setCurrentImg(currentImg - 10);
     }
     await Promise.resolve(dispatch(getPlanets(prevPageState)));
   };
 
-
   console.log(planets);
   return (
     <section className="global-planets-div">
+       <h1>Planets</h1>
       <div className="navigation-links">
-      <Button onClick={getPrevPage}><LeftOutlined /></Button>
-        <Button onClick={getNextPage}><RightOutlined /></Button>
-        <a className="test-abso" onClick={test}>test</a>
+     
+
+        <Button onClick={getPrevPage}>
+          <LeftOutlined />
+        </Button>
+        <Button onClick={getNextPage}>
+          <RightOutlined />
+        </Button>
       </div>
 
-      <h1>Planets</h1>
-
-      <div className="planets">
+      
+      {loading ?   <div className="planets">
         {planets[planets.length - 1]?.results.map((planet, index) => (
           <div className="planet" key={uniqid()}>
             <span className="planet-name">{planet.name}</span>
             <img
-              src={currentImg >= 1  && currentImg < 20? `https://starwars-visualguide.com/assets/img/planets/${
-                currentImg  + index  
-              }.jpg` : "https://starwars-visualguide.com/assets/img/placeholder.jpg"}
+              src={
+                currentImg >= 1 && currentImg < 20
+                  ? `https://starwars-visualguide.com/assets/img/planets/${
+                      currentImg + index
+                    }.jpg`
+                  : "https://starwars-visualguide.com/assets/img/placeholder.jpg"
+              }
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src =
@@ -105,7 +110,8 @@ const Planets = () => {
             </div>
           </div>
         ))}
-      </div>
+      </div> : <LoadingOutlined  className="loading"/>}
+     
     </section>
   );
 };
