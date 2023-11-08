@@ -1,7 +1,7 @@
 import { LoadingOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { Button } from "antd";
-import { getPersons, setCurrentPage } from "../../slices/firstPageSlice";
+import { getPersons, } from "../../slices/firstPageSlice";
 import "./characters.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";

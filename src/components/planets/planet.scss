@@ -44,7 +44,7 @@
 .hover-info {
   display: $display;
   flex-direction: column;
-  background-color: #fff;
+  background-color: $white;
   border-radius: $fifthenPix;
   top: 370px;
   width: $personImgWidth;
@@ -61,7 +61,7 @@
   color: blue;
 }
 .planet-name {
-  
+  background-color: $white;
   position: absolute;
   width: $personImgWidth;
   height: 50px;

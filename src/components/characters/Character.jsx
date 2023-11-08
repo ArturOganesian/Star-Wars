@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Character = () => {
   const location = useLocation();
   const state = location.state;
-  console.log(state.homeworld);
+
   return (
     <section className="character-info-container">
       <div className="character-info-global">
@@ -38,7 +38,7 @@ const Character = () => {
             <Link
               to={{
                 pathname: `/planet`,
-                search: `?sort=Hoth`,
+                
               }}
             >
               Link
