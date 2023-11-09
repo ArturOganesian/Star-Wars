@@ -19,10 +19,10 @@ const Footer = () => {
           target="_blank"
         >
           {" "}
-          <img src="linkedinIcon.png" />
+          <img src="linkedinIcon.png"  alt="linkedin"/>
         </a>
         <a href="https://github.com/ArturOganesian">
-          <img src="gitLogo.png" target="_blank" />
+          <img src="gitLogo.png" target="_blank" alt="gitHub" />
         </a>
         <a></a>
         <p className="creator">

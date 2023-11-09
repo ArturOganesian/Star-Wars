@@ -1,0 +1,69 @@
+@-webkit-keyframes titleAnimation {
+  0% {
+    color: white;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    color: aquamarine;
+    -webkit-transform: solid(1.1);
+            transform: solid(1.1);
+  }
+  100% {
+    color: white;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes titleAnimation {
+  0% {
+    color: white;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    color: aquamarine;
+    -webkit-transform: solid(1.1);
+            transform: solid(1.1);
+  }
+  100% {
+    color: white;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+.globalPage-global-section {
+  margin-top: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+.globalPage-global-section img {
+  width: 500px;
+}
+
+.to {
+  cursor: pointer;
+}
+
+.to:hover {
+  cursor: pointer;
+  position: relative;
+  padding: 10px 20px;
+  background: aqua;
+  font-size: 25px;
+  border-radius: 15px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.to-titles {
+  color: yellow;
+  -webkit-animation: titleAnimation 3s infinite;
+          animation: titleAnimation 3s infinite;
+  position: absolute;
+  padding: 15px;
+}

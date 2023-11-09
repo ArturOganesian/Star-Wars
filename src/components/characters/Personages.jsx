@@ -113,6 +113,7 @@ const FirstPart = () => {
                       currentImg <= 89 ? index + currentImg : index
                     }.jpg`,
                   }}
+                  
                 >
                   More Info
                 </Link>

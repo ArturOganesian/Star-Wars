@@ -1,0 +1,31 @@
+@import '../../stylesVariables/variables.scss';
+.globalPage-global-section{
+    margin-top: 200px;
+    display: $display;
+    justify-content: space-evenly;
+    img{
+        width: 500px;
+    }
+}
+.to{
+    cursor: pointer;  
+}
+
+.to:hover{
+     cursor:pointer;
+    position:relative;
+    padding:10px 20px;
+    background:aqua;
+    font-size:25px;
+    border-radius: 15px;
+    transition:all 1s;
+ 
+ 
+  }
+
+.to-titles{
+    color: yellow;
+    animation:  titleAnimation 3s infinite;
+    position: absolute;
+    padding: $fifthenPix;
+}

@@ -1,16 +1,18 @@
-import { Route, Routes } from "react-router";
+
 import "./App.css";
 import Characters from "./components/characters/Characters";
 import Header from "./components/header/Header";
-import Planets from "./components/planets/Planets";
-import Planet from "./components/planets/Planet";
 import Footer from "./components/footer/Footer";
+import GlobalPage from "./components/globalPage/GlobalPage";
+import { Route,Routes } from "react-router-dom";
 function App() {
   return (
     <div className="App">
       <Header />
+      <Routes>
+        <Route path="/" element={<GlobalPage />} /> 
+      </Routes>
       <Characters />
-    
       <Footer />
     </div>
   );
