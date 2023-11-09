@@ -2,13 +2,20 @@
 .globalPage-global-section{
     margin-top: 200px;
     display: $display;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     img{
         width: 500px;
+        @media  screen and (max-width: 900px) {
+                width: 200px;    
+        }
     }
 }
 .to{
     cursor: pointer;  
+    @media  screen and (max-width: 900px) {
+        padding: $fifthenPix;    
+}
 }
 
 .to:hover{
