@@ -1,17 +1,22 @@
-
-
 body {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   background-image: url("/public/bgimg3.jpeg");
   margin: 0;
   padding: 0;
 }
 
-.loading{
+a {
+  text-decoration: none;
+}
+
+.loading {
   color: yellow;
- font-size: 70px;
- position: absolute;
- top: 350px;
- right: 740px;
- 
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.non-clicable {
+  pointer-events: none;
 }

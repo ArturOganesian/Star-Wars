@@ -1,17 +1,16 @@
 @import "../../stylesVariables/variables.scss";
 
-
 .global-planets-div {
   h1 {
     text-align: $center;
     color: aqua;
     animation: titleAnimation 3s infinite;
-    
   }
 }
 .navigation-links {
   display: $display;
   justify-content: end;
+
   a {
     color: red;
     padding: $fifthenPix;
@@ -29,7 +28,7 @@
   justify-content: $center;
 
   padding: 50px;
-  border-radius: 15px;
+  border-radius: $fifthenPix;
 
   img {
     width: $personImgWidth;
@@ -53,7 +52,6 @@
 
   span {
     padding: 8px;
-   
   }
 }
 
@@ -92,7 +90,6 @@
     justify-content: $center;
   }
   h3 {
-  
     animation: titleAnimation 3s infinite;
     text-align: $center;
   }
@@ -103,12 +100,9 @@
 
 .navigation-links {
   display: $display;
-  
   padding-right: 25px;
- @media screen and (max-width: 900px){
-  justify-content: center;
-  padding: 0;
-
- }
-  
+  @media screen and (max-width: 900px) {
+    justify-content: $center;
+    padding: 0;
+  }
 }

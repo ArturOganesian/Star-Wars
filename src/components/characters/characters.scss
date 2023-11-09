@@ -1,9 +1,8 @@
 @import "../../stylesVariables/variables.scss";
 
-
-.global-characters-div{
-    margin-top: 180px;
-   min-height: 500px;
+.global-characters-div {
+  margin-top: 180px;
+  min-height: 500px;
 }
 .characters-1 {
   margin-top: 50px;
@@ -17,7 +16,7 @@
 }
 .character {
   padding: $fifthenPix;
-  border-radius:$fifthenPix;
+  border-radius: $fifthenPix;
 }
 
 .first-part-global-container {
@@ -25,12 +24,10 @@
   width: 91%;
   flex-wrap: wrap;
   justify-content: end;
-  @media screen and (max-width: 900px){
-    justify-content: center;
-    width: 100%;
+  @media screen and (max-width: 900px) {
+    justify-content: $center;
   }
 
- 
   padding: $fifthenPix;
   border-radius: $fifthenPix;
 
@@ -38,7 +35,7 @@
     display: $display;
     align-items: $center;
     justify-content: $center;
-    background-color: #fff;
+    background-color: $white;
     width: 220px;
     height: 50px;
     border-radius: 10px;
@@ -47,7 +44,7 @@
 
 .persons-info-container {
   text-align: $center;
-  background-color: #fff;
+  background-color: $white;
   margin-left: 10px;
   padding: $fifthenPix;
   border-radius: 10px;
@@ -56,17 +53,18 @@
 .persons-global-container {
   h1 {
     text-align: $center;
-   
-
     animation: titleAnimation 3s infinite;
+    @media screen and (max-width: 900px) {
+    }
   }
   .navigation-links-characters {
     display: $display;
     justify-content: end;
-    align-items: center;
-    @media screen and (max-width: 900px){
-      justify-content: center;
-     
-    } 
-}
+    align-items: $center;
+    padding-right: 25px;
+    @media screen and (max-width: 900px) {
+      justify-content: $center;
+      padding: 0;
+    }
+  }
 }

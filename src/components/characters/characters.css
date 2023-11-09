@@ -32,11 +32,6 @@
             transform: scale(1);
   }
 }
-.test-abso {
-  position: absolute;
-  left: 50px;
-}
-
 .global-characters-div {
   margin-top: 180px;
   min-height: 500px;
@@ -76,7 +71,6 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    width: 100%;
   }
 }
 .first-part-global-container span {
@@ -119,11 +113,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-right: 25px;
 }
 @media screen and (max-width: 900px) {
   .persons-global-container .navigation-links-characters {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    padding: 0;
   }
 }

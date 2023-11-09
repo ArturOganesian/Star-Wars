@@ -1,0 +1,24 @@
+@import "../../stylesVariables/variables.scss";
+
+.global-homeworld-section {
+  h2 {
+    text-align: $center;
+    animation: titleAnimation 4s infinite;
+  }
+
+  img {
+    width: 200px;
+  }
+}
+.world-container {
+  display: $display;
+  justify-content: space-evenly;
+
+  p {
+    color: $aqua;
+  }
+  span {
+    color: $yellowColor;
+    padding: $fifthenPix;
+  }
+}

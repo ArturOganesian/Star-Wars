@@ -12,14 +12,13 @@
   position: fixed;
   z-index: 1000;
   top: 0;
-  @media screen and (max-width: 600px){
-     flex-direction: column;
-     align-items: start;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: start;
   }
   .logo-name {
-    
     color: $yellowColor;
-    font-family: 'Cabin Sketch', sans-serif;
+    font-family: "Cabin Sketch", sans-serif;
     font-size: 3rem;
     cursor: $cursor;
     text-decoration: none;

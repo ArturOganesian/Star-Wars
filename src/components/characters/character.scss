@@ -14,6 +14,7 @@
   align-items: flex-end;
   flex-wrap: wrap;
 }
+
 .character-info {
   h3 {
     text-align: $center;
@@ -23,7 +24,10 @@
     color: $yellowColor;
   }
   span {
-    padding: 15px;
-    color: aqua;
+    padding: $fifthenPix;
+    color: $aqua;
+  }
+  a {
+    color: rgb(5, 5, 238);
   }
 }

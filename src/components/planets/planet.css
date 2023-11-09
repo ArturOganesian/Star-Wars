@@ -32,11 +32,6 @@
             transform: scale(1);
   }
 }
-.test-abso {
-  position: absolute;
-  left: 50px;
-}
-
 .global-planets-div h1 {
   text-align: center;
   color: aqua;

@@ -1,7 +1,7 @@
 import { LoadingOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { Button } from "antd";
-import { getPersons, } from "../../slices/firstPageSlice";
+import { getPersons } from "../../slices/firstPageSlice";
 import "./characters.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,7 +17,6 @@ const FirstPart = () => {
   const [currentPageState, setCurrentPageState] = useState(currentPage);
   const [prevPageState, setPrevPageState] = useState();
   const dispatch = useDispatch();
-  console.log(persons);
 
   useEffect(() => {
     setCurrentPageState(currentPageState + 1);
@@ -45,70 +44,85 @@ const FirstPart = () => {
 
   return (
     <section className="persons-global-container">
-       <h1>Characters</h1>
+      <h1>Characters</h1>
       <div className="navigation-links-characters">
-        <Button onClick={prevPage}>
-          <LeftOutlined />
-        </Button>
-        <Button onClick={nextPage}>
-          <RightOutlined />
-        </Button>
-      </div>
-     
+        {prevPageState >= 1 ? (
+          <Button
+            className={!loading ? "non-clicable" : null}
+            onClick={prevPage}
+          >
+            <LeftOutlined />
+          </Button>
+        ) : null}
 
-      { loading ? <section className="first-part-global-container">
-        {persons[persons.length - 1]?.results.map((person, index) => (
-          <div key={uniqid()} className="characters-1">
-            <div className="character">
-              <span>{person.name}</span>
-              <img
-                src={
-                  currentImg + index !== 17
-                    ? `https://starwars-visualguide.com/assets/img/characters/${
-                        currentImg + index
-                      }.jpg`
-                    : "https://starwars-visualguide.com/assets/img/placeholder.jpg"
-                }
-                alt={"errror"}
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src =
-                    "https://starwars-visualguide.com/assets/img/placeholder.jpg";
-                }}
-              />
+        {currentPageState < 10 ? (
+          <Button
+            className={!loading ? "non-clicable" : null}
+            onClick={nextPage}
+          >
+            <RightOutlined />
+          </Button>
+        ) : null}
+      </div>
+
+      {loading ? (
+        <section className="first-part-global-container">
+          {persons[persons.length - 1]?.results.map((person, index) => (
+            <div key={uniqid()} className="characters-1">
+              <div className="character">
+                <span>{person.name}</span>
+                <img
+                  src={
+                    currentImg + index !== 17
+                      ? `https://starwars-visualguide.com/assets/img/characters/${
+                          currentImg + index
+                        }.jpg`
+                      : "https://starwars-visualguide.com/assets/img/placeholder.jpg"
+                  }
+                  alt={"errror"}
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src =
+                      "https://starwars-visualguide.com/assets/img/placeholder.jpg";
+                  }}
+                />
+              </div>
+              <div className="persons-info-container">
+                <p className="person-info">gender: {person.gender}</p>
+                <p className="person-info">BirthDay:{person.birth_year}</p>
+                <p className="person-info">
+                  height: {person.height / 100}meter
+                </p>
+                <p className="person-info">mass: {person.mass}kg</p>
+                <Link
+                  to={{
+                    pathname: "/character",
+                    search: `?sort=${person.name}`,
+                  }}
+                  state={{
+                    name: person.name,
+                    birth_year: person.birth_year,
+                    species: person.species,
+                    height: person.height,
+                    mass: person.mass,
+                    gender: person.gender,
+                    hair_color: person.hair_color,
+                    skin_color: person.skin_color,
+                    homeworld: person.homeworld,
+                    imgUrl: `https://starwars-visualguide.com/assets/img/characters/${
+                      currentImg <= 89 ? index + currentImg : index
+                    }.jpg`,
+                  }}
+                >
+                  More Info
+                </Link>
+              </div>
             </div>
-            <div className="persons-info-container">
-              <p className="person-info">gender: {person.gender}</p>
-              <p className="person-info">BirthDay:{person.birth_year}</p>
-              <p className="person-info">height: {person.height / 100}meter</p>
-              <p className="person-info">mass: {person.mass}kg</p>
-              <Link
-                to={{
-                  pathname: "/character",
-                  search: `?sort=${person.name}`,
-                }}
-                state={{
-                  name: person.name,
-                  birth_year: person.birth_year,
-                  species: person.species,
-                  height: person.height,
-                  mass: person.mass,
-                  gender: person.gender,
-                  hair_color: person.hair_color,
-                  skin_color: person.skin_color,
-                  homeworld: person.homeworld,
-                  imgUrl: `https://starwars-visualguide.com/assets/img/characters/${
-                    currentImg <= 89 ? index + currentImg : index
-                  }.jpg`,
-                }}
-              >
-                More Info
-              </Link>
-            </div>
-          </div>
-        ))}
-      </section> : <LoadingOutlined  className="loading"/>}
-      
+          ))}
+        </section>
+      ) : (
+        <LoadingOutlined className="loading" />
+      )}
     </section>
   );
 };
